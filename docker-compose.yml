@@ -3,7 +3,7 @@ services:
     image: dockurr/windows
     container_name: windows
     environment:
-      VERSION: "tiny11"
+      VERSION: "u7"
     devices:
       - /dev/kvm
       - /dev/net/tun
