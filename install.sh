@@ -3,11 +3,11 @@
 # Przerwij działanie skryptu w przypadku błędu
 set -e
 
-echo "=== 1. Tworzenie i przechodzenie do katalogu ==="
-mkdir -p /home/igor/Pulpit/docker/
-cd /home/igor/Pulpit/docker/
+#echo "=== 1. Tworzenie i przechodzenie do katalogu ==="
+#mkdir -p /home/igor/Pulpit/docker/
+#cd /home/igor/Pulpit/docker/
 
-echo "=== 2. Tworzenie konfiguracji docker-compose.yml dla Tiny11 ==="
+echo "=== 2. Tworzenie konfiguracji docker-compose.yml dla win7 (dostępne wersje link w README) ==="
 # Zamiast błędnego git clone, tworzymy plik konfiguracyjny bezpośrednio na dysku
 cat << 'EOF' > docker-compose.yml
 services:
@@ -15,7 +15,7 @@ services:
     image: dockurr/windows
     container_name: windows
     environment:
-      VERSION: "tiny11"
+      VERSION: "u7"
       LANGUAGE: "Polish"
     devices:
       - /dev/kvm
