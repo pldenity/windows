@@ -7,31 +7,6 @@ set -e
 #mkdir -p /home/igor/Pulpit/docker/
 #cd /home/igor/Pulpit/docker/
 
-echo "=== 2. Tworzenie konfiguracji docker-compose.yml dla win7 (dostępne wersje link w README) ==="
-# Zamiast błędnego git clone, tworzymy plik konfiguracyjny bezpośrednio na dysku
-cat << 'EOF' > docker-compose.yml
-services:
-  windows:
-    image: dockurr/windows
-    container_name: windows
-    environment:
-      VERSION: "u7"
-      LANGUAGE: "Polish"
-    devices:
-      - /dev/kvm
-      - /dev/net/tun
-    cap_add:
-      - NET_ADMIN
-    ports:
-      - 8006:8006
-      - 3389:3389/tcp
-      - 3389:3389/udp
-    volumes:
-      - ./windows:/storage
-    restart: always
-    stop_grace_period: 2m
-EOF
-
 echo "=== 3. Uruchamianie kontenera w tle ==="
 docker compose up -d
 
